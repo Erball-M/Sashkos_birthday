@@ -1,0 +1,1 @@
+export { ReactComponent as MarkIco } from '@icos/markIco.svg'

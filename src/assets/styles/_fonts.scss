@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Bank Gothic';
+    src: url('../fonts/BankGothicBT-Light.eot');
+    src: local('Bank Gothic Light'), local('BankGothicBT-Light'),
+        url('../fonts/BankGothicBT-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/BankGothicBT-Light.woff2') format('woff2'),
+        url('../fonts/BankGothicBT-Light.woff') format('woff'),
+        url('../fonts/BankGothicBT-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bank Gothic';
+    src: url('../fonts/BankGothicBT-Medium.eot');
+    src: local('Bank Gothic Medium'), local('BankGothicBT-Medium'),
+        url('../fonts/BankGothicBT-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/BankGothicBT-Medium.woff2') format('woff2'),
+        url('../fonts/BankGothicBT-Medium.woff') format('woff'),
+        url('../fonts/BankGothicBT-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pricedown Bl';
+    src: url('../fonts/PricedownBl-Regular.eot');
+    src: local('PricedownBl-Regular'),
+        url('../fonts/PricedownBl-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/PricedownBl-Regular.woff2') format('woff2'),
+        url('../fonts/PricedownBl-Regular.woff') format('woff'),
+        url('../fonts/PricedownBl-Regular.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Diploma';
+    src: url('../fonts/PricedownBl-Regular.eot');
+    src: local('PricedownBl-Regular'),
+        url('../fonts/Diploma_Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
