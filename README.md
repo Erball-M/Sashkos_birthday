@@ -1,4 +1,6 @@
-# Sashkos_birthday
+# **FAN PROJECT**
+
+## Sashkos_birthday
 - git clone https://github.com/Erball-M/Sashkos_birthday
 - cd Sashkos_birthday
 - npm i
