@@ -11,28 +11,30 @@ const Button = ({
     children,
     onClick,
     variant = 'default',
-    sound = 'press',
+    sound = 'select',
     disabled,
     ...props
 }) => {
     const handledSoundName = disabled || !onClick ? 'invalid' : sound
-    const soundPlay = useSound(handledSoundName)
+    const soundPress = useSound(handledSoundName)
+    const soundHover = useSound('hover')
     const isBigScreen = useMediaQuery({ query: '(min-width: 900px)' })
 
     const [isMark, setIsMark] = useState(false)
 
     const soundedOnClick = (e) => {
-        soundPlay()
+        soundPress()
         setIsMark(true)
         if (disabled || !onClick) return
         onClick(e)
     }
 
-    const showMark = () => {
+    const mouseOver = () => {
+        soundHover()
         if (variant !== 'menu') return
         setIsMark(true)
     }
-    const hideMark = () => {
+    const mouseLeave = () => {
         if (variant !== 'menu') return
         setIsMark(false)
     }
@@ -41,8 +43,8 @@ const Button = ({
         <button
             className={classNames(cl.btn, cl[variant], className)}
             onClick={soundedOnClick}
-            onMouseOver={showMark}
-            onMouseLeave={hideMark}
+            onMouseOver={mouseOver}
+            onMouseLeave={mouseLeave}
             {...props}
         >
             {(isBigScreen && isMark && variant === 'menu') &&

@@ -4,7 +4,9 @@ import cl from './EventListPage.module.scss'
 
 const EventListPage = () => {
     return (
-        'EventListPage'
+        <Container className="scrollContainer">
+
+        </Container>
     )
 }
 

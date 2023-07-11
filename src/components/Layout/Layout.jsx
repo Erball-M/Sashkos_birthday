@@ -12,9 +12,9 @@ const Layout = () => {
             case ('/'):
                 title = 'Main Menu'
                 break;
-            case ('/guest_list'):
-                title = 'Guests'
-                break;
+            // case ('/guest_list'):
+            //     title = 'Guests'
+            //     break;
             case ('/event_list'):
                 title = 'Events'
                 break;
@@ -26,15 +26,13 @@ const Layout = () => {
     }, [pathname])
     return (
         <div className={cl.wrapper}>
-            <header>
+            <header className={cl.header}>
                 <Container className={cl.title}>
                     {title}
                 </Container>
             </header>
             <main className={cl.main}>
-                <Container className={cl.container}>
-                    <Outlet />
-                </Container>
+                <Outlet />
             </main>
         </div>
     )

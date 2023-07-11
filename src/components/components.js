@@ -4,3 +4,4 @@ export { IcoWrapper } from './UI/IcoWrapper/IcoWrapper'
 export { DisclaimerModal } from './DisclaimerModal/DisclaimerModal'
 
 export { Layout } from './Layout/Layout'
+export { Slider } from './Slider/Slider'

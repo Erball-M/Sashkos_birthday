@@ -1,18 +1,25 @@
 .wrapper {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    // display: flex;
+    // flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: var(--container-padding);
+    background: url(https://i.redd.it/4ceihcz9axh71.png) no-repeat;
+    background-position: left top;
+    background-size: 100% auto;
 }
+
+.header {}
 
 .title {
     font-family: 'Diploma';
     font-size: var(--fz-l);
+    color: rgb(var(--color-menu));
+    padding-bottom: 0;
 }
 
 .main {
-    flex-grow: 1;
     display: flex;
-    align-items: stretch;
 }
-
-.container {}
