@@ -4,7 +4,7 @@ import svgr from 'vite-plugin-svgr'
 import { resolve } from 'path'
 
 export default defineConfig({
-  plugins: [react(), svgr()], // Add viteAliases as a plugin
+  plugins: [react(), svgr(),],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),

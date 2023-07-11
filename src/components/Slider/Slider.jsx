@@ -60,7 +60,7 @@ const Slider = ({ images, interval, children }) => {
                     <div className={cl.progressBar}>
                         <div
                             className={cl.progressLine}
-                            style={{ width: `${progressPercent}%`, transition: `${interval}ms` }}
+                            style={{ width: `${progressPercent}%`, transition: `${interval}ms linear` }}
                         />
                     </div>
                 </div>

@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
+import { Navigate, Route, Routes, useNavigate } from 'react-router-dom'
 import { useSound } from './hooks/hooks'
 import { DisclaimerModal, Layout } from '@components'
+import { MenuPage, GuestListPage, EventListPage, OptionsPage } from './pages/pages'
 import soundtrack from '@audios/soundtrack.mp3'
 import soundtrack_hb from '@audios/soundtrack_hb.mp3'
-import { MenuPage, GuestListPage, EventListPage, OptionsPage } from './pages/pages'
 
 function App() {
   const navigate = useNavigate()
@@ -40,7 +40,6 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<MenuPage />} />
-          <Route path='/event_list' element={<EventListPage />} />
           <Route path='/options' element={<OptionsPage
             audioRef={audioRef}
             audioHBRef={audioHBRef}
@@ -48,7 +47,9 @@ function App() {
             audioToggler={audioToggler}
           />} />
         </Route>
+        <Route path='/event_list' element={<EventListPage />} />
         <Route path='/guest_list' element={<GuestListPage />} />
+        <Route path='*' element={<Navigate to='/' />} />
       </Routes>
       <DisclaimerModal
         isOpen={isDisclaimerOpen}

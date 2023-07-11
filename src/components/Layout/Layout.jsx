@@ -27,7 +27,7 @@ const Layout = () => {
     return (
         <div className={cl.wrapper}>
             <header className={cl.header}>
-                <Container className={cl.title}>
+                <Container className='title'>
                     {title}
                 </Container>
             </header>

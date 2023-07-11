@@ -29,7 +29,7 @@ const Button = ({
         onClick(e)
     }
 
-    const mouseOver = () => {
+    const mouseEnter = () => {
         soundHover()
         if (variant !== 'menu') return
         setIsMark(true)
@@ -43,7 +43,7 @@ const Button = ({
         <button
             className={classNames(cl.btn, cl[variant], className)}
             onClick={soundedOnClick}
-            onMouseOver={mouseOver}
+            onMouseEnter={mouseEnter}
             onMouseLeave={mouseLeave}
             {...props}
         >

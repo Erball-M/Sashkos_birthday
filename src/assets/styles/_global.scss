@@ -30,23 +30,9 @@ body {
     text-align: right;
 }
 
-.scrollContainer {
-    width: 100vw;
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    scroll-snap-type: y mandatory;
-
-    &::-webkit-scrollbar {
-        display: none;
-        width: 0 !important;
-    }
-
-    -ms-overflow-style: none;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.scrollContainer_element {
-    scroll-snap-align: start;
+.title {
+    font-family: 'Diploma';
+    font-size: var(--fz-l);
+    color: rgb(var(--color-menu));
+    padding-bottom: 0;
 }

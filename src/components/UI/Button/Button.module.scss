@@ -3,6 +3,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    gap: var(--container-padding);
     position: relative;
     text-align: center;
 }
