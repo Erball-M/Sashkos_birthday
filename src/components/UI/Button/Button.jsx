@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import classNames from 'classnames'
 import { useSound } from '../../../hooks/hooks'
-import { MarkIco } from '@constants/icos'
+import { MarkIco, CakeIco } from '@constants/icos'
 import { IcoWrapper } from '@components'
 import cl from './Button.module.scss'
 
@@ -13,6 +13,7 @@ const Button = ({
     variant = 'default',
     sound = 'select',
     disabled,
+    birthday,
     ...props
 }) => {
     const handledSoundName = disabled || !onClick ? 'invalid' : sound
@@ -49,7 +50,7 @@ const Button = ({
         >
             {(isBigScreen && isMark && variant === 'menu') &&
                 <IcoWrapper className={cl.icoWrapper}>
-                    <MarkIco className={cl.ico} />
+                    {birthday ? <CakeIco className={cl.ico} /> : <MarkIco className={cl.ico} />}
                 </IcoWrapper>
             }
             {children}

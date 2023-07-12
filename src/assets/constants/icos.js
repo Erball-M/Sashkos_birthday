@@ -1,4 +1,5 @@
 export { ReactComponent as MarkIco } from '@icos/markIco.svg'
+export { ReactComponent as CakeIco } from '@icos/cake.svg'
 export { ReactComponent as MapMarkIco } from '@icos/mapMark.svg'
 export { ReactComponent as PizzaIco } from '@icos/pizza.svg'
 export { ReactComponent as HomeIco } from '@icos/home.svg'

@@ -3,9 +3,10 @@ import classNames from 'classnames'
 import { useProgressBar } from '../../hooks/hooks'
 import { Container } from '@components'
 import logo from '@images/logo.png'
+import logoHB from '@images/logoHB.png'
 import cl from './Slider.module.scss'
 
-const Slider = ({ images, interval, children }) => {
+const Slider = ({ images, interval, birthday }) => {
     const [autoSlide, setAutoSlide] = useState(true)
     const [currentIndex, setCurrentIndex] = useState(0)
 
@@ -56,10 +57,10 @@ const Slider = ({ images, interval, children }) => {
             </div>
             <Container className={cl.ui}>
                 <div className={cl.wrapper}>
-                    <img src={logo} className={cl.logo} />
-                    <div className={cl.progressBar}>
+                    <img src={birthday ? logoHB : logo} className={cl.logo} />
+                    <div className={classNames(cl.progressBar, birthday && cl.hbBar)}>
                         <div
-                            className={cl.progressLine}
+                            className={classNames(cl.progressLine, birthday && cl.hbLine)}
                             style={{ width: `${progressPercent}%`, transition: `${interval}ms linear` }}
                         />
                     </div>

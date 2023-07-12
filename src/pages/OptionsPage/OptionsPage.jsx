@@ -1,5 +1,6 @@
 import React, { useEffect, useLayoutEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useSound } from '../../hooks/hooks'
 import { Button, Container, } from '@components'
 import cl from './OptionsPage.module.scss'
 
@@ -9,6 +10,8 @@ const OptionsPage = ({ audioRef, audioHBRef, currentAudio, audioToggler }) => {
     const currentAudioNode = currentAudio.current
     const audio = audioRef.current
     const audioHB = audioHBRef.current
+
+    const hornSound = useSound('horn')
 
     const [isPaused, setIsPaused] = useState(currentAudioNode?.paused || false)
 
@@ -31,6 +34,9 @@ const OptionsPage = ({ audioRef, audioHBRef, currentAudio, audioToggler }) => {
 
     const toggleAudio = () => {
         const newAudio = currentAudioNode.id.includes('hb') ? audio : audioHB
+        if (newAudio === audioHB) {
+            hornSound()
+        }
         const prevAudio = currentAudioNode
         prevAudio.pause()
         newAudio.currentTime = 0

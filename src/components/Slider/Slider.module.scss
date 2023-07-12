@@ -75,7 +75,16 @@
     animation-delay: .5s
 }
 
+.hbBar {
+    border-color: rgb(104, 79, 214);
+    background: rgb(248, 219, 0);
+}
+
 .progressLine {
     height: 100%;
     background: var(--color-white);
+}
+
+.hbLine {
+    background: rgb(255, 2, 2)
 }

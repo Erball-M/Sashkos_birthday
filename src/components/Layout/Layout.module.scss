@@ -11,6 +11,15 @@
     background-size: 100% auto;
 }
 
+.confetti {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
 .header {}
 
 .main {

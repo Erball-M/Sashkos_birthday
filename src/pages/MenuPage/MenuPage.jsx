@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useOutletContext } from 'react-router-dom'
 import { Button, } from '@components'
 import warn from '@images/warn.png'
 import cl from './MenuPage.module.scss'
 
 const MenuPage = () => {
+    const context = useOutletContext()
+    const { birthday } = context
+
     const navigate = useNavigate()
     const [quitCoords, setQuitCoords] = useState({})
     const [isWarn, setIsWarn] = useState(false)
@@ -51,17 +54,18 @@ const MenuPage = () => {
 
     return (
         <div className='menu'>
-            <Button onClick={() => navigate('/guest_list')} variant='menu'>
+            <Button onClick={() => navigate('/guest_list')} variant='menu' birthday={birthday}>
                 Guest List
             </Button>
-            <Button onClick={() => navigate('/event_list')} variant='menu'>
+            <Button onClick={() => navigate('/event_list')} variant='menu' birthday={birthday}>
                 Event List
             </Button>
-            <Button onClick={() => navigate('/options')} variant='menu'>
+            <Button onClick={() => navigate('/options')} variant='menu' birthday={birthday}>
                 Options
             </Button>
             <Button
                 variant='menu'
+                birthday={birthday}
                 sound='invalid'
                 // onClick={hanleQuitClick}
                 // onMouseEnter={handleQuit}

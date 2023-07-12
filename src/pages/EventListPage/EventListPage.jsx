@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
+import Confetti from 'react-confetti'
 import { useSound } from '../../hooks/hooks'
 import { Container, Button, IcoWrapper } from '@components'
 import { PizzaIco, HomeIco, GunIco, PlayerIco } from '@constants/icos'
 import cl from './EventListPage.module.scss'
 
-const EventListPage = () => {
+const EventListPage = ({ birthday }) => {
     const navigate = useNavigate()
     const [isLegend, setIsLegend] = useState(false)
 
@@ -25,6 +26,7 @@ const EventListPage = () => {
 
     return (
         <Container className={cl.container}>
+            {birthday && <Confetti className={cl.confetti} />}
             <div className={cl.map}>
                 {isLegend &&
                     <div className={cl.legend}>
@@ -60,12 +62,11 @@ const EventListPage = () => {
                     </div>
                 }
                 <iframe
+                    src="https://snazzymaps.com/embed/506614"
                     className={cl.iframe}
-                    src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1868.5970718302467!2d74.60128144730524!3d42.87945713036462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389eb7e74697b7a5%3A0xb625d929c04e872e!2z0J_QsNC90YTQuNC70L7QsiDQv9Cw0YDQutGL!5e0!3m2!1sru!2skg!4v1689085990561!5m2!1sru!2skg'
-                    style={{ border: 0, }}
-                    allowfullscreen=''
-                    loading='lazy'
-                    referrerpolicy='no-referrer-when-downgrade'
+                // width="100%"
+                // height="600px"50.060432774196975, 19.942044985754368
+                // style="border:none;"
                 />
             </div>
             <div className={cl.ui}>

@@ -18,7 +18,7 @@ const images = [
     'https://placehold.co/1000x1000',
 ]
 
-const GuestListPage = () => {
+const GuestListPage = ({ birthday }) => {
     const navigate = useNavigate()
     const interval = 5000
 
@@ -28,7 +28,7 @@ const GuestListPage = () => {
                 <Button onClick={() => navigate(-1)}>Back</Button>
                 <Button onClick={() => navigate('/event_list')}>Events</Button>
             </div>
-            <Slider images={images} interval={interval} />
+            <Slider images={images} interval={interval} birthday={birthday} />
         </>
     )
 }

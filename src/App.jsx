@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { Navigate, Route, Routes, useNavigate } from 'react-router-dom'
 import { useSound } from './hooks/hooks'
 import { DisclaimerModal, Layout } from '@components'
@@ -15,6 +15,14 @@ function App() {
   const audioHBRef = useRef()
   const [currentAudio, setCurrentAudio] = useState(audioRef)
   const audioToggler = () => setCurrentAudio(prevAudio => prevAudio === audioRef ? audioHBRef : audioRef)
+
+  const isBirtday = useMemo(() => {
+    if (currentAudio === audioHBRef) {
+      return true
+    } else {
+      return false
+    }
+  }, [currentAudio])
 
   const toggler = () => setIsDisclaimerOpen(!isDisclaimerOpen)
 
@@ -38,7 +46,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Layout />}>
+        <Route path='/' element={<Layout birthday={isBirtday} />}>
           <Route index element={<MenuPage />} />
           <Route path='/options' element={<OptionsPage
             audioRef={audioRef}
@@ -47,8 +55,8 @@ function App() {
             audioToggler={audioToggler}
           />} />
         </Route>
-        <Route path='/event_list' element={<EventListPage />} />
-        <Route path='/guest_list' element={<GuestListPage />} />
+        <Route path='/event_list' element={<EventListPage birthday={isBirtday} />} />
+        <Route path='/guest_list' element={<GuestListPage birthday={isBirtday} />} />
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>
       <DisclaimerModal
