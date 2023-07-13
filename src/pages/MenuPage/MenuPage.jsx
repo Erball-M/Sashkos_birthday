@@ -20,37 +20,37 @@ const MenuPage = () => {
         }
     }, [isWarn])
 
-    // const handleQuit = (e) => {
-    //     const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-    //     const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
-    //     const target = e.target
-    //     const coords = target.getBoundingClientRect()
-    //     let x = coords.width
-    //     let y = coords.height
+    const handleQuit = (e) => {
+        const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+        const target = e.target
+        const coords = target.getBoundingClientRect()
+        let x = coords.width
+        let y = coords.height
 
-    //     if ((x + coords.right) > windowWidth) {
-    //         x = -x
-    //     } else {
-    //         const randomOffsetX = Math.random() * 200 - 100
-    //         x += randomOffsetX
-    //     }
+        if ((x + coords.right) > windowWidth) {
+            x = -x
+        } else {
+            const randomOffsetX = Math.random() * 200 - 100
+            x += randomOffsetX
+        }
 
-    //     const randomOffsetY = Math.random() * 200 - 100
-    //     y += randomOffsetY
+        const randomOffsetY = Math.random() * 200 - 100
+        y += randomOffsetY
 
-    //     if ((y + coords.bottom) > windowHeight) {
-    //         y = windowHeight - coords.bottom
-    //     } else if (coords.top + y < 0) {
-    //         y = -coords.top
-    //     }
+        if ((y + coords.bottom) > windowHeight) {
+            y = windowHeight - coords.bottom
+        } else if (coords.top + y < 0) {
+            y = -coords.top
+        }
 
-    //     setQuitCoords({ x, y })
-    // }
+        setQuitCoords({ x, y })
+    }
 
-    // const hanleQuitClick = () => {
-    //     setIsWarn(true)
-    //     setWarnCount(prev => prev + 1)
-    // }
+    const hanleQuitClick = () => {
+        setIsWarn(true)
+        setWarnCount(prev => prev + 1)
+    }
 
     return (
         <div className='menu'>
@@ -60,6 +60,9 @@ const MenuPage = () => {
             <Button onClick={() => navigate('/event_list')} variant='menu' birthday={birthday}>
                 Event List
             </Button>
+            <Button onClick={() => navigate('/whish_list')} variant='menu' birthday={birthday}>
+                Whish List
+            </Button>
             <Button onClick={() => navigate('/options')} variant='menu' birthday={birthday}>
                 Options
             </Button>
@@ -67,20 +70,20 @@ const MenuPage = () => {
                 variant='menu'
                 birthday={birthday}
                 sound='invalid'
-                // onClick={hanleQuitClick}
+                onClick={hanleQuitClick}
                 // onMouseEnter={handleQuit}
                 style={{ position: 'relative', left: `${quitCoords.x}px`, top: `${quitCoords.y}px` }}
             >
                 Quit Game
             </Button>
-            {/* {
+            {
                 isWarn &&
                 <img
                     className={cl.warnImg}
                     src={warn}
                     onDragStart={e => e.preventDefault()}
                 />
-            } */}
+            }
         </div>
     )
 }

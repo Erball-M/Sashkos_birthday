@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import classNames from 'classnames'
 import { useProgressBar } from '../../hooks/hooks'
 import { Container } from '@components'
@@ -6,27 +6,27 @@ import logo from '@images/logo.png'
 import logoHB from '@images/logoHB.png'
 import cl from './Slider.module.scss'
 
-const Slider = ({ images, interval, birthday }) => {
+const Slider = ({ imageDatas, interval, birthday }) => {
     const [autoSlide, setAutoSlide] = useState(true)
     const [currentIndex, setCurrentIndex] = useState(0)
 
-    const progressPercent = useProgressBar(currentIndex, images.length)
+    const progressPercent = useProgressBar(currentIndex, imageDatas.length)
 
     useEffect(() => {
         const timer = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % imageDatas.length)
         }, interval)
         if (!autoSlide) clearInterval(timer)
         return () => clearInterval(timer)
-    }, [images.length, interval, autoSlide])
+    }, [imageDatas.length, interval, autoSlide])
 
     const prevSlide = () => {
         setAutoSlide(false)
-        setCurrentIndex(prevIndex => (prevIndex - 1 + images.length) % images.length)
+        setCurrentIndex(prevIndex => (prevIndex - 1 + imageDatas.length) % imageDatas.length)
     }
     const nextSlide = () => {
         setAutoSlide(false)
-        setCurrentIndex(prevIndex => (prevIndex + 1) % images.length)
+        setCurrentIndex(prevIndex => (prevIndex + 1) % imageDatas.length)
     }
 
     const handleScroll = (e) => {
@@ -40,10 +40,10 @@ const Slider = ({ images, interval, birthday }) => {
     return (
         <>
             <div className={cl.slider} onWheel={handleScroll}>
-                {images.map((image, index) => (
+                {imageDatas.map((imageData, index) => (
                     <img
                         key={index}
-                        src={image}
+                        src={imageData.src}
                         alt={`Slide ${index + 1}`}
                         className={classNames(cl.slide, currentIndex === index && cl.activeSlide)}
                         onDragStart={e => e.preventDefault()}
@@ -65,6 +65,9 @@ const Slider = ({ images, interval, birthday }) => {
                         />
                     </div>
                 </div>
+                <h2 className='title'>
+                    {imageDatas[currentIndex].label}
+                </h2>
             </Container>
         </>
     )

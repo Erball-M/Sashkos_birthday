@@ -14,8 +14,8 @@ const Layout = ({ birthday }) => {
             case ('/'):
                 title = 'Main Menu'
                 break;
-            case ('/event_list'):
-                title = 'Events'
+            case ('/whish_list'):
+                title = 'Whishlist'
                 break;
             case ('/options'):
                 title = 'Options'

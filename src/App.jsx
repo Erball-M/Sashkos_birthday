@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { Navigate, Route, Routes, useNavigate } from 'react-router-dom'
 import { useSound } from './hooks/hooks'
 import { DisclaimerModal, Layout } from '@components'
-import { MenuPage, GuestListPage, EventListPage, OptionsPage } from './pages/pages'
+import { MenuPage, GuestListPage, EventListPage, OptionsPage, WhishListPage } from './pages/pages'
 import soundtrack from '@audios/soundtrack.mp3'
 import soundtrack_hb from '@audios/soundtrack_hb.mp3'
 
@@ -48,6 +48,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout birthday={isBirtday} />}>
           <Route index element={<MenuPage />} />
+          <Route path='whish_list' element={<WhishListPage />} />
           <Route path='/options' element={<OptionsPage
             audioRef={audioRef}
             audioHBRef={audioHBRef}
