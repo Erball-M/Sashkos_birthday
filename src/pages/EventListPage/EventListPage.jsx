@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import Confetti from 'react-confetti'
 import { useSound } from '../../hooks/hooks'
 import { Container, Button, IcoWrapper } from '@components'
-import { PizzaIco, HomeIco, GunIco, PlayerIco } from '@constants/icos'
+import { PizzaIco, HomeIco, GunIco, PlayerIco } from '@imports/icos'
 import cl from './EventListPage.module.scss'
 
 const EventListPage = ({ birthday }) => {
@@ -61,13 +61,11 @@ const EventListPage = ({ birthday }) => {
                         </div>
                     </div>
                 }
-                <iframe
-                    src="https://snazzymaps.com/embed/506614"
+                {/* <iframe
+                    src=''
                     className={cl.iframe}
-                // width="100%"
-                // height="600px"50.060432774196975, 19.942044985754368
-                // style="border:none;"
-                />
+                /> */}
+                snazzymaps iframe
             </div>
             <div className={cl.ui}>
                 <Button onClick={() => navigate('/')}>

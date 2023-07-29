@@ -13,7 +13,7 @@ export default defineConfig({
       '@icos': resolve(__dirname, 'src/assets/icos'),
       '@styles': resolve(__dirname, 'src/assets/styles'),
       '@components': resolve(__dirname, 'src/components/components'),
-      '@constants': resolve(__dirname, 'src/assets/constants'),
+      '@imports': resolve(__dirname, 'src/assets/imports'),
     },
   },
 })

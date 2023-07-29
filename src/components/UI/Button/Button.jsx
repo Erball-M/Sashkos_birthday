@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import classNames from 'classnames'
 import { useSound } from '../../../hooks/hooks'
-import { MarkIco, CakeIco } from '@constants/icos'
+import { MarkIco, CakeIco } from '@imports/icos'
 import { IcoWrapper } from '@components'
 import cl from './Button.module.scss'
 

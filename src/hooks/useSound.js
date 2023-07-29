@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import SOUNDS from '@constants/sounds'
+import SOUNDS from '@imports/sounds'
 
 export const useSound = (soundName = 'select') => {
     const src = useMemo(() => SOUNDS[soundName], [soundName])
